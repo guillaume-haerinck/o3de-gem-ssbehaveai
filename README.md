@@ -14,4 +14,4 @@ Behave is a package used as a starting point to implement AI capabilites in O3DE
 - BehaviorTree.CPP needs to be built by hand outside of o3de which is annoying, need to fix that
 - [QtNodeEditor](https://github.com/paceholder/nodeeditor) also need to be built by hand using an old version of QT and QTCreator software. Either need to remove this deps (given that o3de already provide a nodding GUI) or remove these builds steps
 
-![Doc](doc/behaviortree.png)
+![Doc](Doc/behaviortree.png)

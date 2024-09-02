@@ -78,9 +78,9 @@ namespace SparkyStudios::AI::Behave::Navigation
 
         if (auto* bc = azrtti_cast<AZ::BehaviorContext*>(rc))
         {
-            bc->Enum<static_cast<int>(NavigationMeshPartitionType::Watershed), NavigationMeshPartitionType>("eNMPT_Watershed")
-                ->Enum<static_cast<int>(NavigationMeshPartitionType::Monotone), NavigationMeshPartitionType>("eNMPT_Monotone")
-                ->Enum<static_cast<int>(NavigationMeshPartitionType::Layers), NavigationMeshPartitionType>("eNMPT_Layers");
+            bc->Enum<static_cast<int>(NavigationMeshPartitionType::Watershed)>("eNMPT_Watershed")
+                ->Enum<static_cast<int>(NavigationMeshPartitionType::Monotone)>("eNMPT_Monotone")
+                ->Enum<static_cast<int>(NavigationMeshPartitionType::Layers)>("eNMPT_Layers");
         }
     }
 

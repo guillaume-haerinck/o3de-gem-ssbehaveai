@@ -26,7 +26,7 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Nodes::Navigation
         const std::string& name, const Core::BehaviorTreeNodeConfiguration& config)
         : Node(name, config)
         , _navigationState(NavigationState::Idle)
-        , _requestId(0)
+        //, _requestId(0)
     {
     }
 
@@ -57,6 +57,7 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Nodes::Navigation
         return ports;
     }
 
+    /*
     void NavigationFindPathToEntityNode::OnTraversalStarted(LmbrCentral::PathfindRequest::NavigationRequestId requestId)
     {
         if (requestId == _requestId)
@@ -105,9 +106,11 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Nodes::Navigation
             TraversalCancelled();
         }
     }
+    */
 
     void NavigationFindPathToEntityNode::Start()
     {
+        /*
         if (const AZ::EntityId& target = GetTarget(); target.IsValid())
         {
             if (!_requestId && target != _lastTarget)
@@ -126,10 +129,12 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Nodes::Navigation
         {
             AZ_Warning("BehaveAI [BehaviorTree]", false, "[%s:%s]: No target attribute was supplied.", RegisteredNodeName(), NodeName());
         }
+        */
     }
 
     Core::BehaviorTreeNodeStatus NavigationFindPathToEntityNode::Tick()
     {
+        /*
         if (_lastTarget.IsValid() && _requestId)
         {
             switch (_navigationState)
@@ -144,8 +149,9 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Nodes::Navigation
                 return Core::BehaviorTreeNodeStatus::FAILURE;
             }
         }
-
+        */
         return Core::BehaviorTreeNodeStatus::FAILURE;
+
     }
 
     void NavigationFindPathToEntityNode::TraversalStarted()
@@ -185,12 +191,12 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Nodes::Navigation
 
     void NavigationFindPathToEntityNode::ConnectBus()
     {
-        LmbrCentral::NavigationComponentNotificationBus::Handler::BusConnect(GetEntityId());
+        //LmbrCentral::NavigationComponentNotificationBus::Handler::BusConnect(GetEntityId());
     }
 
     void NavigationFindPathToEntityNode::DisconnectBus()
     {
-        LmbrCentral::NavigationComponentNotificationBus::Handler::BusDisconnect(GetEntityId());
+        //LmbrCentral::NavigationComponentNotificationBus::Handler::BusDisconnect(GetEntityId());
     }
 
     void NavigationFindPathToEntityNode::ReconnectBus()
@@ -201,19 +207,23 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Nodes::Navigation
 
     void NavigationFindPathToEntityNode::StartNavigation()
     {
+        /*
         if (!_requestId)
         {
             EBUS_EVENT_ID_RESULT(_requestId, GetEntityId(), LmbrCentral::NavigationComponentRequestBus, FindPathToEntity, _lastTarget);
         }
+        */
     }
 
     void NavigationFindPathToEntityNode::StopNavigation()
     {
+        /*
         if (_requestId)
         {
             EBUS_EVENT_ID(GetEntityId(), LmbrCentral::NavigationComponentRequestBus, Stop, _requestId);
             _requestId = 0;
         }
+        */
     }
 
     void NavigationFindPathToEntityNode::RestartNavigation()
@@ -285,9 +295,9 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Nodes::Navigation
         return &m_value;
     }
 
-    const AZ::Uuid& BlackboardPropertyNavigationFindPathToEntityNavigationState::GetDataTypeUuid() const
+    const AZ::Uuid BlackboardPropertyNavigationFindPathToEntityNavigationState::GetDataTypeUuid() const
     {
-        return azrtti_typeid<NavigationState>();
+        return AZ::SerializeTypeInfo<NavigationState>::GetUuid();
     }
 
     BlackboardPropertyNavigationFindPathToEntityNavigationState* BlackboardPropertyNavigationFindPathToEntityNavigationState::Clone(

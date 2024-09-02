@@ -104,9 +104,9 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Blackboard
         return nullptr;
     }
 
-    const AZ::Uuid& BlackboardPropertyNil::GetDataTypeUuid() const
+    const AZ::Uuid BlackboardPropertyNil::GetDataTypeUuid() const
     {
-        return azrtti_typeid<void*>();
+        return AZ::SerializeTypeInfo<void*>::GetUuid();
     }
 
     BlackboardPropertyNil* BlackboardPropertyNil::Clone(const char* name) const
@@ -183,9 +183,9 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Blackboard
         return &mValue;
     }
 
-    const AZ::Uuid& BlackboardPropertyBoolean::GetDataTypeUuid() const
+    const AZ::Uuid BlackboardPropertyBoolean::GetDataTypeUuid() const
     {
-        return azrtti_typeid<bool>();
+        return AZ::SerializeTypeInfo<bool>::GetUuid();
     }
 
     void BlackboardPropertyBoolean::CloneDataFrom(const BlackboardProperty* scriptProperty)
@@ -265,9 +265,9 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Blackboard
         return aznew BlackboardPropertyNumber(name ? name : mName.c_str(), mValue);
     }
 
-    const AZ::Uuid& BlackboardPropertyNumber::GetDataTypeUuid() const
+    const AZ::Uuid BlackboardPropertyNumber::GetDataTypeUuid() const
     {
-        return azrtti_typeid<double>();
+        return AZ::SerializeTypeInfo<double>::GetUuid();
     }
 
     void BlackboardPropertyNumber::CloneDataFrom(const BlackboardProperty* scriptProperty)
@@ -340,9 +340,9 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Blackboard
         return aznew BlackboardPropertyString(name ? name : mName.c_str(), mValue.c_str());
     }
 
-    const AZ::Uuid& BlackboardPropertyString::GetDataTypeUuid() const
+    const AZ::Uuid BlackboardPropertyString::GetDataTypeUuid() const
     {
-        return azrtti_typeid<AZStd::string>();
+        return AZ::SerializeTypeInfo<AZStd::string>::GetUuid();
     }
 
     void BlackboardPropertyString::CloneDataFrom(const BlackboardProperty* scriptProperty)
@@ -389,9 +389,9 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Blackboard
         return &mValue;
     }
 
-    const AZ::Uuid& BlackboardPropertyEntityRef::GetDataTypeUuid() const
+    const AZ::Uuid BlackboardPropertyEntityRef::GetDataTypeUuid() const
     {
-        return azrtti_typeid<AZ::EntityId>();
+        return AZ::SerializeTypeInfo<AZ::EntityId>::GetUuid();
     }
 
     BlackboardPropertyEntityRef* BlackboardPropertyEntityRef::Clone(const char* name) const
@@ -446,9 +446,9 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Blackboard
         return &mValue;
     }
 
-    const AZ::Uuid& BlackboardPropertyVector2::GetDataTypeUuid() const
+    const AZ::Uuid BlackboardPropertyVector2::GetDataTypeUuid() const
     {
-        return azrtti_typeid<AZ::Vector2>();
+        return AZ::SerializeTypeInfo<AZ::Vector2>::GetUuid();
     }
 
     BlackboardPropertyVector2* BlackboardPropertyVector2::Clone(const char* name) const

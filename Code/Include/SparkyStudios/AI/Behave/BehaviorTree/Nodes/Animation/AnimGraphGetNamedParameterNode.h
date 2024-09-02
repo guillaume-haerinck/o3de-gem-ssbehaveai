@@ -1,3 +1,4 @@
+
 // Copyright (c) 2021-present Sparky Studios. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -31,7 +32,7 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Nodes::Animation
     {
     public:
         AZ_CLASS_ALLOCATOR(AnimGraphGetNamedParameterNode, AZ::SystemAllocator, 0);
-        AZ_RTTI(((AnimGraphGetNamedParameterNode<T>), "{493e6e39-d275-4209-924f-7a62ca0aaf7e}", T), Core::Node);
+        AZ_RTTI((AnimGraphGetNamedParameterNode, "{493e6e39-d275-4209-924f-7a62ca0aaf7e}", T), Core::Node);
 
         AnimGraphGetNamedParameterNode(const std::string& name, const Core::BehaviorTreeNodeConfiguration& config)
             : Node(name, config)

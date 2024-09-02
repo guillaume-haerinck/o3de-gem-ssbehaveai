@@ -123,7 +123,7 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Blackboard
         explicit BlackboardPropertyNil(const char* name);
 
         [[nodiscard]] const void* GetDataAddress() const override;
-        [[nodiscard]] const AZ::Uuid& GetDataTypeUuid() const override;
+        [[nodiscard]] const AZ::Uuid GetDataTypeUuid() const override;
 
         BlackboardPropertyNil* Clone(const char* name) const override;
 
@@ -148,7 +148,7 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Blackboard
         BlackboardPropertyBoolean(const char* name, bool value);
 
         [[nodiscard]] const void* GetDataAddress() const override;
-        [[nodiscard]] const AZ::Uuid& GetDataTypeUuid() const override;
+        [[nodiscard]] const AZ::Uuid GetDataTypeUuid() const override;
 
         BlackboardPropertyBoolean* Clone(const char* name) const override;
 
@@ -175,7 +175,7 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Blackboard
         BlackboardPropertyNumber(const char* name, double value);
 
         [[nodiscard]] const void* GetDataAddress() const override;
-        [[nodiscard]] const AZ::Uuid& GetDataTypeUuid() const override;
+        [[nodiscard]] const AZ::Uuid GetDataTypeUuid() const override;
 
         BlackboardPropertyNumber* Clone(const char* name) const override;
 
@@ -202,7 +202,7 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Blackboard
         BlackboardPropertyString(const char* name, const char* value);
 
         [[nodiscard]] const void* GetDataAddress() const override;
-        [[nodiscard]] const AZ::Uuid& GetDataTypeUuid() const override;
+        [[nodiscard]] const AZ::Uuid GetDataTypeUuid() const override;
 
         BlackboardPropertyString* Clone(const char* name = nullptr) const override;
 
@@ -227,7 +227,7 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Blackboard
         explicit BlackboardPropertyEntityRef(const char* name);
 
         [[nodiscard]] const void* GetDataAddress() const override;
-        [[nodiscard]] const AZ::Uuid& GetDataTypeUuid() const override;
+        [[nodiscard]] const AZ::Uuid GetDataTypeUuid() const override;
 
         BlackboardPropertyEntityRef* Clone(const char* name = nullptr) const override;
 
@@ -252,7 +252,7 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Blackboard
         explicit BlackboardPropertyVector2(const char* name);
 
         [[nodiscard]] const void* GetDataAddress() const override;
-        [[nodiscard]] const AZ::Uuid& GetDataTypeUuid() const override;
+        [[nodiscard]] const AZ::Uuid GetDataTypeUuid() const override;
 
         BlackboardPropertyVector2* Clone(const char* name = nullptr) const override;
 

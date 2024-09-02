@@ -92,11 +92,13 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Editor::Widgets
             bt_model->lock(locked);
             node->nodeGraphicsObject().lock(locked);
 
+            /*
             if (auto subtree = azdynamic_cast<SubtreeNodeModel*>(bt_model))
             {
                 if (subtree->expanded())
                     subtrees_expanded.push_back(node);
             }
+            */
 
             if (!locked)
             {

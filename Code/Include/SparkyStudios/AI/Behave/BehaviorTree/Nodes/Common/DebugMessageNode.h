@@ -89,7 +89,7 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Nodes::Common
         BlackboardPropertyDebugMessageLevel(const char* name, const DebugMessageLevel& value);
 
         [[nodiscard]] const void* GetDataAddress() const override;
-        [[nodiscard]] const AZ::Uuid& GetDataTypeUuid() const override;
+        [[nodiscard]] const AZ::Uuid GetDataTypeUuid() const override;
 
         BlackboardPropertyDebugMessageLevel* Clone(const char* name = nullptr) const override;
 

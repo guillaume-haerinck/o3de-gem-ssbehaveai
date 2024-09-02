@@ -36,7 +36,7 @@ namespace SparkyStudios::AI::Behave::Navigation
     class NavigationMeshSettingsAsset : public AZ::Data::AssetData
     {
     public:
-        AZ_RTTI(BehaveNavigationMeshSettingsAsset, "{E59EBE08-1A42-4A9F-82E9-C7156CE72034}", AZ::Data::AssetData);
+        AZ_RTTI(NavigationMeshSettingsAsset, "{E59EBE08-1A42-4A9F-82E9-C7156CE72034}", AZ::Data::AssetData);
         AZ_CLASS_ALLOCATOR(NavigationMeshSettingsAsset, AZ::SystemAllocator, 0);
 
         static void Reflect(AZ::ReflectContext* rc);

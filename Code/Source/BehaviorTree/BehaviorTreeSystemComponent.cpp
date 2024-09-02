@@ -103,6 +103,7 @@ namespace SparkyStudios::AI::Behave::BehaviorTree
     {
         BehaveBehaviorTreeRequestBus::Handler::BusConnect();
 
+        /*
         AZStd::vector<AZStd::string> superchargedGems{ "EMotionFX", "LmbrCentral" };
 
         auto settingsRegistry = AZ::SettingsRegistry::Get();
@@ -177,6 +178,7 @@ namespace SparkyStudios::AI::Behave::BehaviorTree
             // Enable all the available nodes.
             _factory.GetRegistry()->EnableNodes(enabledNodes);
         }
+        */
     }
 
     void BehaviorTreeSystemComponent::Deactivate()

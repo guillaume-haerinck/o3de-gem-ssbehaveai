@@ -134,9 +134,9 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Nodes::Common
         return &mValue;
     }
 
-    const AZ::Uuid& BlackboardPropertyDebugMessageLevel::GetDataTypeUuid() const
+    const AZ::Uuid BlackboardPropertyDebugMessageLevel::GetDataTypeUuid() const
     {
-        return azrtti_typeid<DebugMessageLevel>();
+        return AZ::SerializeTypeInfo<DebugMessageLevel>::GetUuid();
     }
 
     BlackboardPropertyDebugMessageLevel* BlackboardPropertyDebugMessageLevel::Clone(const char* name) const

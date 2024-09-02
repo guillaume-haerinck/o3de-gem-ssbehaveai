@@ -31,7 +31,7 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Nodes::Animation
     {
     public:
         AZ_CLASS_ALLOCATOR(AnimGraphSetNamedParameterNode, AZ::SystemAllocator, 0);
-        AZ_RTTI(((AnimGraphSetNamedParameterNode<T>), "{8d202ec2-61ef-48ee-a083-a9ffc4362a97}", T), Core::Node);
+        AZ_RTTI((AnimGraphSetNamedParameterNode, "{8d202ec2-61ef-48ee-a083-a9ffc4362a97}", T), Core::Node);
 
         AnimGraphSetNamedParameterNode(const std::string& name, const Core::BehaviorTreeNodeConfiguration& config)
             : Node(name, config)

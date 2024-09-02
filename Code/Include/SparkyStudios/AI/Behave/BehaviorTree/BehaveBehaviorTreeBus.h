@@ -24,7 +24,7 @@ namespace SparkyStudios::AI::Behave::BehaviorTree
     class BehaveBehaviorTreeRequests
     {
     public:
-        AZ_RTTI(SSBehaviorTreeRequests, "{CF1733ED-EEB3-4330-AF52-B0F290232A14}");
+        AZ_RTTI(BehaveBehaviorTreeRequests, "{CF1733ED-EEB3-4330-AF52-B0F290232A14}");
         virtual ~BehaveBehaviorTreeRequests() = default;
 
         /**

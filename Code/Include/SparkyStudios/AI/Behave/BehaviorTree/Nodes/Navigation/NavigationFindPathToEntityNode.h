@@ -19,7 +19,7 @@
 #include <SparkyStudios/AI/Behave/BehaviorTree/Core/Node.h>
 #include <SparkyStudios/AI/Behave/BehaviorTree/Core/Registry.h>
 
-#include <LmbrCentral/Ai/NavigationComponentBus.h>
+//#include <LmbrCentral/Ai/NavigationComponentBus.h>
 
 namespace SparkyStudios::AI::Behave::BehaviorTree::Nodes::Navigation
 {
@@ -37,7 +37,7 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Nodes::Navigation
      */
     class NavigationFindPathToEntityNode
         : public Core::Node
-        , public LmbrCentral::NavigationComponentNotificationBus::Handler
+        //, public LmbrCentral::NavigationComponentNotificationBus::Handler
     {
     public:
         AZ_CLASS_ALLOCATOR(NavigationFindPathToEntityNode, AZ::SystemAllocator, 0);
@@ -78,6 +78,7 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Nodes::Navigation
             return "Navigation";
         }
 
+        /*
         void OnTraversalStarted(LmbrCentral::PathfindRequest::NavigationRequestId requestId) override;
 
         void OnTraversalPathUpdate(
@@ -90,6 +91,7 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Nodes::Navigation
         void OnTraversalComplete(LmbrCentral::PathfindRequest::NavigationRequestId requestId) override;
 
         void OnTraversalCancelled(LmbrCentral::PathfindRequest::NavigationRequestId requestId) override;
+        */
 
     protected:
         void Start() override;
@@ -124,7 +126,7 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Nodes::Navigation
         void RestartNavigation();
 
         NavigationState _navigationState;
-        LmbrCentral::PathfindRequest::NavigationRequestId _requestId;
+        //LmbrCentral::PathfindRequest::NavigationRequestId _requestId;
         AZ::EntityId _lastTarget;
     };
 
@@ -150,7 +152,7 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Nodes::Navigation
         BlackboardPropertyNavigationFindPathToEntityNavigationState(const char* name, const NavigationState& value);
 
         [[nodiscard]] const void* GetDataAddress() const override;
-        [[nodiscard]] const AZ::Uuid& GetDataTypeUuid() const override;
+        [[nodiscard]] const AZ::Uuid GetDataTypeUuid() const override;
 
         BlackboardPropertyNavigationFindPathToEntityNavigationState* Clone(const char* name = nullptr) const override;
 

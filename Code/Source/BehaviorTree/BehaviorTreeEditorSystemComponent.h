@@ -66,7 +66,7 @@ namespace SparkyStudios::AI::Behave::BehaviorTree
 
         void OnApplicationAboutToStop() override;
 
-        void OnPopulateToolMenuItems() override;
+        void OnPopulateToolMenuItems();
         void OnResetToolMenuItems() override;
 
         const AzToolsFramework::AssetBrowser::ProductAssetBrowserEntry* GetProductFromBrowserEntry(

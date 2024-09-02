@@ -140,7 +140,7 @@ namespace SparkyStudios::AI::Behave::BehaviorTree::Blackboard
          *
          * @return const AZ::Uuid&
          */
-        [[nodiscard]] virtual const AZ::Uuid& GetDataTypeUuid() const = 0;
+        [[nodiscard]] virtual const AZ::Uuid GetDataTypeUuid() const = 0;
 
         /**
          * @brief Clone this instance to create a new one with a possibly new name.
